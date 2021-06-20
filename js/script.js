@@ -1,5 +1,5 @@
 
-const url = "https://fedup.hollundplants.no/wp/v2/posts?_embed&per_page=10";
+const url = "https://fedup.hollundplants.no/wp-json/wp/v2/posts?_embed&per_page=10";
 const blogContainer = document.querySelector(".blog-container");
 
 async function getPosts() {
@@ -17,9 +17,9 @@ async function getPosts() {
 
 
             blogContainer.innerHTML += `<div class="post-card">
-                                            <a href="blogdetails.html?id=${results[i].id}">
                                             <h3>${results[i].title.rendered}</h3>
                                             <p>By: ${results[i]._embedded.author[0].name}</p>
+                                            <a href="blogdetails.html?id=${results[i].id}">
                                                 <button class="read-button">Read Post</button>
                                             </a>
                                         </div>`;
